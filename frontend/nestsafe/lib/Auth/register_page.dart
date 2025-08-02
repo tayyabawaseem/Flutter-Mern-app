@@ -35,10 +35,18 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // abhi sirf local state me store ho raha hai
                   print("Name: $name, Email: $email, Password: $password");
                 },
                 child: Text("Register"),
+              ),
+              SizedBox(height: 10),
+
+              // 👇 Login navigation text
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                child: Text("Already have an account? Login here"),
               ),
             ],
           ),
@@ -47,4 +55,3 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
-// TODO Implement this library.

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
-import 'register_page.dart'; // new file
+import 'Auth/register_page.dart'; // Register screen file
+import 'Auth/login_page.dart';    // Login screen file
+import 'screens/location_page.dart';    // Location handler screen
 
 void main() {
   runApp(
@@ -19,8 +21,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       builder: DevicePreview.appBuilder,
       locale: DevicePreview.locale(context),
-      title: 'Flutter Register',
-      home: RegisterPage(),
+      title: 'Flutter Auth',
+
+      // ✅ Initial route set to LocationPage
+      initialRoute: '/location',
+
+      // ✅ Named routes
+      routes: {
+        '/location': (context) => LocationPage(),
+        '/login': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
+      },
     );
   }
 }
